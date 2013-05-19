@@ -28,18 +28,18 @@ int main(void)
 	}
 }
 
-ISR(TIMER2_COMP_vect)			// obs≥uga przerwania od Timera 2
+ISR(TIMER2_COMP_vect)			// obs≈Çuga przerwania od Timera 2
 {
 	exe_loop = 1;
 }
 
-ISR(INT0_vect)				// obs≥uga przerwania od przycisku/switcha
+ISR(INT0_vect)				// obs≈Çuga przerwania od przycisku/switcha
 {
-	GICR &= ~(1<<INT0) ;        // wy≥πczamy obs≥ugÍ przerwania na int0 ->ew. drgania stykÛw mog≥by powodowaÊ wielokrotne wywo≥anie
+	GICR &= ~(1<<INT0) ;        // wy≈ÇƒÖczamy obs≈Çugƒô przerwania na int0 ->ew. drgania styk√≥w mog≈Çby powodowaƒá wielokrotne wywo≈Çanie
 	
-	_delay_ms(50);				// czekamy na ustanie drgaÒ stykÛw
+	_delay_ms(50);				// czekamy na ustanie drga≈Ñ styk√≥w
 	
 	on	 ^= 1;					// zmieniamy stan flagi
 	
-	GICR |= (1<<INT0) ;		// w≥πczamy z powrotem obs≥ugÍ przerwania
+	GICR |= (1<<INT0) ;		// w≈ÇƒÖczamy z powrotem obs≈Çugƒô przerwania
 }
