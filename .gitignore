@@ -24,3 +24,6 @@
 *.map
 *.srec
 *.lss
+
+*.atsuo
+PANDA5/Debug
